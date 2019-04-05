@@ -15,7 +15,7 @@ class CreateBlogTablesTable extends Migration
     {
         Schema::create('blog_tables', function (Blueprint $table) {
             $table->bigIncrements('id_blog');
-            $table->integer('id_user')->unique();
+            $table->integer('id_user')->unsigned();
             $table->string('blog_post_text',3000);
             $table->timestamps();
         });

@@ -15,7 +15,7 @@ class CreateUserAddressBookTablesTable extends Migration
     {
         Schema::create('user_address_book_tables', function (Blueprint $table) {
             $table->bigIncrements('id_address_book');
-            $table->integer('id_user')->unique();
+            $table->integer('id_user')->unsigned();
             $table->String('address',500)->nullable();
             $table->enum('setDefault_address',['0','1']);
             $table->String('phone_number',11)->nullable();

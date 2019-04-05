@@ -15,8 +15,8 @@ class CreateItemTablesTable extends Migration
     {
         Schema::create('item_tables', function (Blueprint $table) {
             $table->bigIncrements('id_item');
-            $table->integer('id_product')->unique();
-            $table->integer('id_order')->unique();
+            $table->integer('id_product')->unsigned();
+            $table->integer('id_order')->unsigned();
             $table->enum('quantity_no',['100','250','300']);
             $table->timestamps();
         });
